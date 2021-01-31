@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Example</title>
+    	<meta charset="UTF-8">
+    	<link href="style.css" rel="stylesheet">
+        <title>Mad Libs!</title>
     </head>
+
     <body>
-        <p>This is an example of a simple HTML page with one paragraph.</p>
+        <p id="heading">Welcome to Mad Libs!</p>
+
+        <select id="selector">
+		    <option value="rand">Random Mad Lib</option>
+		    <option value="benson">Benson</option>
+		    <option value="clothes">Clothes</option>
+		    <option value="dance">Dance</option>
+		    <option value="tarzan">Tarzan</option>
+		    <option value="university">University</option>
+		</select>
+
+		<button type="button" id="playbutton">Play</button>
+
+		<script src="scripts.js"></script>
+		<script src="stories.js"></script>
     </body>
 </html>
