@@ -7,6 +7,7 @@ document.getElementById("nextbutton").onclick = next;
 
 document.getElementById("userinput").style.display = "none";
 document.getElementById("nextbutton").style.display = "none";
+document.getElementById("madlibsdisplay").style.display = "inline";
 
 var inputList = [];
 var placeholders = [];
@@ -33,7 +34,7 @@ function play() {
 	var selection = document.getElementById("selector").value;
 	if (selection == "rand")
 		selection = document.getElementById("selector").options[randomInt(1, 5)].value;
-	var text = stories[selection];
+	text = stories[selection];
 	console.log(text);
 	create(text);
 	updateHeading();
@@ -46,7 +47,7 @@ function next() {
 	document.getElementById("userinput").value = ""
 	pIndex++;
 	if (pIndex >= placeholders.length) {
-		display();
+		display(text);
 	} else {
 		updateHeading();
 	}
@@ -70,8 +71,26 @@ function create(text) {
     }
 }
 
-function display() {
+function display(text) {
+	// text = "hello"
+	// inputList = [1, 2, 4]
 	console.log("time to display");
+	document.getElementById("heading").innerHTML = "Congrats, you've completed your MadLibs! Read it below: \n";
+	document.getElementById("userinput").style.display = "none";
+	document.getElementById("nextbutton").style.display = "none";
+	for (let i = 0; i < inputList.length; i++) {
+		inputWord = inputList[i];
+		let re = new RegExp('<.+?>', );
+		text = text.replace(re, inputWord);
+	console.log(text);
+	document.getElementById("madlibsdisplay").innerHTML = text;
+	document.getElementById("madlibsdisplay").style.display = "inine";
+		// text = re.sub(r'<.+?>', inputWord, text, 1);
+	}
+             // text = re.sub(r'<.+?>', userWord, text, 1)
+
+    // print(text)
+
 }
 
  //    function enumerate(array) {
