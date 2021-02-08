@@ -12,6 +12,7 @@ document.getElementById("madlibsdisplay").style.display = "inline";
 var inputList = [];
 var placeholders = [];
 var pIndex = 0;
+var text = "";
 
 // if pIndex as big as length of placeholder string it will do smthn else (display madlib)
 
@@ -42,9 +43,9 @@ function play() {
 
 function next() {
 	var input = document.getElementById("userinput").value;
-	inputList.push(input)
-	console.log(inputList)
-	document.getElementById("userinput").value = ""
+	inputList.push(input);
+	console.log(inputList);
+	document.getElementById("userinput").value = "";
 	pIndex++;
 	if (pIndex >= placeholders.length) {
 		display(text);
@@ -53,10 +54,10 @@ function next() {
 	}
 }
 
-function create(text) {
+function create() {
     var state = "searching";
-    placeholder = "";
-    for (let i = 0; i < text.length; i++) {
+    var placeholder = "";
+    for (var i = 0; i < text.length; i++) {
     	var c = text[i];
         if (state == "searching" && c == "<") {
             state = "reading";
@@ -71,56 +72,25 @@ function create(text) {
     }
 }
 
-function display(text) {
+function display() {
 	// text = "hello"
 	// inputList = [1, 2, 4]
 	console.log("time to display");
 	document.getElementById("heading").innerHTML = "Congrats, you've completed your MadLibs! Read it below: \n";
 	document.getElementById("userinput").style.display = "none";
 	document.getElementById("nextbutton").style.display = "none";
-	for (let i = 0; i < inputList.length; i++) {
-		inputWord = inputList[i];
-		let re = new RegExp('<.+?>', );
+	for (var i = 0; i < inputList.length; i++) {
+		var inputWord = inputList[i];
+		var re = new RegExp('<.+?>');
 		text = text.replace(re, inputWord);
+	}
 	console.log(text);
 	document.getElementById("madlibsdisplay").innerHTML = text;
 	document.getElementById("madlibsdisplay").style.display = "inine";
 		// text = re.sub(r'<.+?>', inputWord, text, 1);
-	}
+}
              // text = re.sub(r'<.+?>', userWord, text, 1)
 
-    // print(text)
-
-}
-
- //    function enumerate(array) {
- //    	for (let i = 0; i < array.length; i += 1) {
- //    		yield [i, array[i]];
- //   		}
-	// }
-
-	// for (let x of enumerate(placeholders)) {
- //    	console.log(x);
-	// }
-    
-
-
-
- //        //for (let p of enumerate(placeholders)) {
- //        //     p = p.lower().replace("-", " ")
- //        //     if isVowel(p[0]):
- //        //         a = "an"
- //        //     else:
- //        //         a = "a"
-
- //    for (let x of enumerate(placeholders)) {
- //   		console.log(x);
- //   	} 
-            // placeholders[p[0]] = p[1];
-            // var inputResult = ("Please input " + "a" + " " + p + ": ")
-            // document.write(inputResult)
-            // document.getElementById("demo").innerHTML = inputResult;
-            // phf.write("\nph" + str(i + 1) + " " + inputResult)
 
 function isVowel(ch) {
 	return (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u');
