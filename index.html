@@ -11,21 +11,23 @@
 
         <p id="madlibsdisplay"></p>
 
-        <select id="selector">
-		    <option value="rand">Random Mad Lib</option>
-		    <option value="benson">Benson</option>
-		    <option value="clothes">Clothes</option>
-		    <option value="dance">Dance</option>
-		    <option value="tarzan">Tarzan</option>
-		    <option value="university">University</option>
-		</select>
+        <form id="start_form" onsubmit="return false">
+	        <select id="selector">
+			    <option value="rand">Random Mad Lib</option>
+			    <option value="benson">Benson</option>
+			    <option value="clothes">Clothes</option>
+			    <option value="dance">Dance</option>
+			    <option value="tarzan">Tarzan</option>
+			    <option value="university">University</option>
+			</select>
+			<button type="button" id="playbutton" autofocus>Play</button>
+		</form>
 
-		<button type="button" id="playbutton">Play</button>
-
-		<input type="text" id="userinput"></input>
-
-		<button type="button" id="nextbutton">Next</button>
-
+		<form id="words_form" onsubmit="return false">
+			<input type="text" id="userinput"></input>
+			<button id="nextbutton">Next</button>
+		</form>
+		
 		<script src="scripts.js"></script>
 		<script src="stories.js"></script>
 

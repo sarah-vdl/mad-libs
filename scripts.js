@@ -4,6 +4,7 @@
 // so that whenever the button is clicked, the javascript function play() is called
 document.getElementById("playbutton").onclick = play;
 document.getElementById("nextbutton").onclick = next;
+document.getElementById("selector").onchange = focus_on_play;
 
 document.getElementById("userinput").style.display = "none";
 document.getElementById("nextbutton").style.display = "none";
@@ -15,6 +16,10 @@ var pIndex = 0;
 var text = "";
 
 // if pIndex as big as length of placeholder string it will do smthn else (display madlib)
+
+function focus_on_play() {
+	document.getElementById("playbutton").focus();
+}
 
 function updateHeading() {
 	var placeholder = placeholders[pIndex];
@@ -32,6 +37,7 @@ function play() {
 	document.getElementById("selector").style.display = "none";
 	document.getElementById("userinput").style.display = "inline";
 	document.getElementById("nextbutton").style.display = "inline";
+	document.getElementById("userinput").focus(); // put focus on textbox
 	var selection = document.getElementById("selector").value;
 	if (selection == "rand")
 		selection = document.getElementById("selector").options[randomInt(1, 5)].value;
@@ -46,6 +52,7 @@ function next() {
 	inputList.push(input);
 	console.log(inputList);
 	document.getElementById("userinput").value = "";
+	document.getElementById("userinput").focus(); // put focus back on textbox for next entry
 	pIndex++;
 	if (pIndex >= placeholders.length) {
 		display(text);
