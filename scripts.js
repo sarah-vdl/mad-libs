@@ -5,10 +5,7 @@
 document.getElementById("playbutton").onclick = play;
 document.getElementById("nextbutton").onclick = next;
 document.getElementById("selector").onchange = focus_on_play;
-
-document.getElementById("userinput").style.display = "none";
-document.getElementById("nextbutton").style.display = "none";
-document.getElementById("madlibsdisplay").style.display = "inline";
+document.getElementById("words_form").style.display = "none";
 
 var inputList = [];
 var placeholders = [];
@@ -33,10 +30,8 @@ function updateHeading() {
 }
 
 function play() {
-	document.getElementById("playbutton").style.display = "none";
-	document.getElementById("selector").style.display = "none";
-	document.getElementById("userinput").style.display = "inline";
-	document.getElementById("nextbutton").style.display = "inline";
+	document.getElementById("start_form").style.display = "none";
+	document.getElementById("words_form").style.display = "block";
 	document.getElementById("userinput").focus(); // put focus on textbox
 	var selection = document.getElementById("selector").value;
 	if (selection == "rand")
@@ -80,12 +75,9 @@ function create() {
 }
 
 function display() {
-	// text = "hello"
-	// inputList = [1, 2, 4]
 	console.log("time to display");
 	document.getElementById("heading").innerHTML = "Congrats, you've completed your MadLibs! Read it below: \n";
-	document.getElementById("userinput").style.display = "none";
-	document.getElementById("nextbutton").style.display = "none";
+	document.getElementById("words_form").style.display = "none";
 	for (var i = 0; i < inputList.length; i++) {
 		var inputWord = inputList[i];
 		var re = new RegExp('<.+?>');
@@ -93,11 +85,7 @@ function display() {
 	}
 	console.log(text);
 	document.getElementById("madlibsdisplay").innerHTML = text;
-	document.getElementById("madlibsdisplay").style.display = "inine";
-		// text = re.sub(r'<.+?>', inputWord, text, 1);
 }
-             // text = re.sub(r'<.+?>', userWord, text, 1)
-
 
 function isVowel(ch) {
 	return (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u');
