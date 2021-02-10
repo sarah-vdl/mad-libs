@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,300&display=swap');
+
+body {
+	background-color: rgb(240, 240, 240);
+}
+
+#content {
+	max-width: 700px;
+	margin: auto;
+	color: rgb(80, 80, 80); /* this is text color */
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	text-align: center;
+	padding: 20px;
+}
+
+
+#selector { 
+
+}
+
+#heading {
+	font-size: 35px;
+}
