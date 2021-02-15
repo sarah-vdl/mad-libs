@@ -4,14 +4,31 @@
 // so that whenever the button is clicked, the javascript function play() is called
 document.getElementById("playbutton").onclick = play;
 document.getElementById("nextbutton").onclick = next;
+document.getElementById("playAgainbutton").onclick = playagain;
 
 document.getElementById("userinput").style.display = "none";
 document.getElementById("nextbutton").style.display = "none";
-document.getElementById("madlibsdisplay").style.display = "inline";
+document.getElementById("madlibsdisplay").style.display = "none";
+document.getElementById("playAgainbutton").style.display = "none";
 
 var inputList = [];
 var placeholders = [];
 var pIndex = 0;
+var Selection = "";
+
+function playagain() {
+	document.getElementById("madlibsdisplay").style.display = "none";
+	document.getElementById("playAgainbutton").style.display = "none";
+	document.getElementById("heading").innerHTML = "Welcome to Mad Libs!";
+	document.getElementById("playbutton").style.display = "inline";
+	document.getElementById("selector").style.display = "inline";
+	document.getElementById("madlibsdisplay").style.display = "none"	
+	document.getElementById("subheading").style.display = "inline";
+	inputList = [];
+	placeholders = [];
+	pIndex = 0;
+	Selection = ""
+}
 
 // if pIndex as big as length of placeholder string it will do smthn else (display madlib)
 
@@ -27,6 +44,7 @@ function updateHeading() {
 }
 
 function play() {
+	document.getElementById("subheading").style.display = "none";
 	document.getElementById("playbutton").style.display = "none";
 	document.getElementById("selector").style.display = "none";
 	document.getElementById("userinput").style.display = "inline";
@@ -35,8 +53,10 @@ function play() {
 	if (selection == "rand")
 		selection = document.getElementById("selector").options[randomInt(1, 5)].value;
 	text = stories[selection];
+	console.log(text[0])
 	console.log(text);
 	create(text);
+	Selection = (selection)
 	updateHeading();
 }
 
@@ -75,7 +95,7 @@ function display(text) {
 	// text = "hello"
 	// inputList = [1, 2, 4]
 	console.log("time to display");
-	document.getElementById("heading").innerHTML = "Congrats, you've completed your MadLibs! Read it below: \n";
+	document.getElementById("heading").innerHTML = "Congrats, you've completed your MadLibs '" + String(Selection) + "'! Read it below: \n";
 	document.getElementById("userinput").style.display = "none";
 	document.getElementById("nextbutton").style.display = "none";
 	for (let i = 0; i < inputList.length; i++) {
@@ -83,8 +103,11 @@ function display(text) {
 		let re = new RegExp('<.+?>', );
 		text = text.replace(re, inputWord);
 	console.log(text);
+	document.getElementById("madlibsdisplay").style.display = "inline";
 	document.getElementById("madlibsdisplay").innerHTML = text;
-	document.getElementById("madlibsdisplay").style.display = "inine";
+	// document.getElementById("madlibsdisplay").style.display = "inine";
+	document.getElementById("playAgainbutton").style.display = "inline";
+	// text = ""
 		// text = re.sub(r'<.+?>', inputWord, text, 1);
 	}
              // text = re.sub(r'<.+?>', userWord, text, 1)

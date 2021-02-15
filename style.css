@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+body {
+	height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /*background: linear-gradient(45deg, red 0 50%, blue 50% 100%);*/
+    /*background-color: rgb(140, 240, 240);*/
+    background-image: linear-gradient(#F86263 50%, #226484 50%);	/*background-color: rgb(140, 240, 240);*/
+	/*background: linear-gradient(black, white);*/ /* W3C */
+	max-width: 700px;
+	margin: auto;
+	color: rgb(80, 80, 80);
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	text-align: center;
+}
+
+#container {
+	width: 550px;
+    height: 300px;
+    margin: auto;
+  	display: block;
+	background-image: linear-gradient(white, white);
+}
+
+/*#whitebox {
+	width: 500px;
+	height: 300px;
+	margin: auto;
+  	display: block;
+	background-color: white;
+}
+*/
+
+
+/*#selector, #playbutton { 
+	position: absolute;
+	top: 250px;
+  	right: 250px;
+*/
+
+#heading {
+	font-size: 35px;
+	font-family: 'Merriweather', serif;
+	text-align: center;
+	/*background-color: rgb(255, 255, 255);*/
+	padding: auto;
+	padding-top: 30px;
+	padding-bottom: 10px;
+	margin-bottom: 2px;
+}
+
+#subheading {
+	text-align: center;
+	font-family: 'Merriweather', serif;
+	/*background-color: rgb(255, 255, 255);*/
+	padding: auto;
+	padding-top: 0px;
+	margin-top: 1px;
+	margin-bottom: 50px;
+}
+
+#content {
+	max-width: 700px;
+	margin: auto;
+	color: rgb(80, 80, 80);  /*this is text color */
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	text-align: center;
+}
