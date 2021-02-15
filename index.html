@@ -7,46 +7,34 @@
     </head>
 
     <body>
+    	<div id="container">
+	        <p id="heading">Welcome to Mad Libs!</p>
+	        <p id="subheading">Please select a story and click play.</p>
+	        <p id="madlibsdisplay"></p>
 
-    	<!-- <div>
+	        <form id="start_form" onsubmit="return false">
+		        <select id="selector">
+				    <option value="rand">Random Mad Lib</option>
+				    <option value="Benson">Benson</option>
+				    <option value="Clothes">Clothes</option>
+				    <option value="Dance">Dance</option>
+				    <option value="Tarzan">Tarzan</option>
+				    <option value="University">University</option>
+				</select>
+				<button type="button" id="playbutton" autofocus>Play</button>
+			</form>
 
-    		<div id="container">
-
-			<div id="top_div">top</div>    
-			<div id="bottom_div">bottom</div>
-
-		</div>  -->
-
-		<div id="container">
-
-        	<p id="heading">Welcome to Mad Libs!</p>
-        	<p id="subheading">Please select a story and click play.</p>
-
-        	<p id="madlibsdisplay"></p>
-
-        	<img id="whitebox"></img>
-
-        <!-- <div id="demobox"> -->
-
-        	<select id="selector">
-		    	<option value="rand">Random Mad Lib</option>
-		    	<option value="Benson">Benson</option>
-		   		<option value="Clothes">Clothes</option>
-		    	<option value="Dance">Dance</option>
-		    	<option value="Tarzan">Tarzan</option>
-		    	<option value="University">University</option>
-			</select>
-
-			<button type="button" id="playbutton">Play</button>
-
-			<input type="text" id="userinput"></input>
-
-			<button type="button" id="nextbutton">Next</button>
+			<form id="words_form" onsubmit="return false">
+				<input type="text" id="userinput"></input>
+				<button id="nextbutton">Next</button>
+			</form>
 
 			<button type="button" id="playAgainbutton">Play Again</button>
 
-			<script src="scripts.js"></script>
-			<script src="stories.js"></script>
 		</div>
+		
+		<script src="scripts.js"></script>
+		<script src="stories.js"></script>
+
     </body>
 </html>
