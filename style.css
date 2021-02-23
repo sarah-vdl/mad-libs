@@ -1,44 +1,126 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Buenard&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/*ddddddddddddddddddddddddddddddd*/
 
 body {
 	height: 100%;
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-image: linear-gradient(#F86263 50%, #226484 50%);
+    background-image: linear-gradient(#f86263 50%, #226484 50%);
 }
 
 #container {
-    margin: auto;
-  	display: block;
+	position: absolute;
+  	top: 50%; left: 50%;
+  	transform: translate(-50%, -50%);
+	margin: auto;
 	background-color: white;
-	max-width: 700px;
-	color: rgb(80, 80, 80); /* this is text color */
-	font-family: 'Open Sans', sans-serif;
+	width: 700px;
+	height: 350px;
+	color: black;
+	font-family: 'Buenard', serif;
 	font-size: 14px;
 	text-align: center;
 	padding: 20px;
+	border: 2px solid black;
+	border-bottom: 4px solid black;
+	border-left: 4px solid black;
+	overflow: auto;
 }
 
 #heading {
-	font-size: 35px;
-	font-family: 'Merriweather', serif;
+	font-size: 40px;
+	font-family: 'Frank Ruhl Libre', serif;
 	text-align: center;
-	/*background-color: rgb(255, 255, 255);*/
 	padding: auto;
-	padding-top: 30px;
-	padding-bottom: 10px;
+	padding-bottom: 2px;
 	margin-bottom: 2px;
 }
 
+#selector, #playbutton, #nextbutton, #userinput, #playAgainbutton {
+	font-size: 20px;
+	/*position: absolute;*/
+	top: 60%;
+	border-bottom: 4px solid black;
+	font-family: 'Montserrat', serif;
+	outline: none;
+	background-color: white;
+	border: 1px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	position: absolute;
+	height: 50px;
+
+}
+
+#selector {
+	font-family: 'Lato', serif;
+	left: 22.5%;
+  	width: 300px;
+}
+
+#playbutton {
+	right: 22.5%;
+  	/*left: 55.5%;*/\
+  	left: 80%;
+  	width: 100px;
+}
+
+#userinput {
+  	left: 22.5%;
+  	width: 293px;
+  	height: 45px;
+  	font-family: 'Lato', serif;
+}
+
+#nextbutton {
+  	right: 22.5%;
+  	width: 100px;
+}
+
+#playAgainbutton {
+	position: relative;
+	margin: auto;
+	margin-top: none;
+	margin-bottom: 200px;
+}
+
 #subheading {
+	font-size: 20px;
 	text-align: center;
-	font-family: 'Merriweather', serif;
-	/*background-color: rgb(255, 255, 255);*/
+	font-family: 'Frank Ruhl Libre', serif;
 	padding: auto;
 	padding-top: 0px;
-	margin-top: 1px;
+	margin-top: 0px;
 	margin-bottom: 50px;
+}
+
+#divider {
+	font-family: 'Merriweather', serif;
+	font-size: 20px;
+	text-align: center;
+	margin: auto;
+	position: absolute;
+	top: 37%;
+	left: 25%;
+	/*left: 24%;*/
+}
+
+#madlibsdisplay {
+	/*position: absolute;
+	top: 30%;
+	left: 8%;
+	right: 8%;*/
+	/*padding-left: 20%;
+	padding-right: 20%;*/
+	margin-bottom: none;
+	padding-bottom: 2px;
 }

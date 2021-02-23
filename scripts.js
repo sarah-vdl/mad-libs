@@ -5,6 +5,7 @@
 document.getElementById("playbutton").onclick = play;
 document.getElementById("nextbutton").onclick = next;
 document.getElementById("selector").onchange = focus_on_play;
+document.getElementById("playAgainbutton").onclick = playagain;
 document.getElementById("words_form").style.display = "none";
 document.getElementById("playAgainbutton").style.display = "none";
 document.getElementById("madlibsdisplay").style.display = "none";
@@ -15,13 +16,15 @@ var pIndex = 0;
 var text = "";
 
 function playagain() {
+	document.getElementById("subheading").style.display = "block";
 	document.getElementById("madlibsdisplay").style.display = "none";
 	document.getElementById("playAgainbutton").style.display = "none";
 	document.getElementById("heading").innerHTML = "Welcome to Mad Libs!";
-	document.getElementById("playbutton").style.display = "inline";
-	document.getElementById("selector").style.display = "inline";
+	document.getElementById("start_form").style.display = "inline";
+	// document.getElementById("selector").style.display = "inline";
 	document.getElementById("madlibsdisplay").style.display = "none";	
 	document.getElementById("subheading").style.display = "inline";
+	document.getElementById("divider").style.display = "inline";
 	inputList = [];
 	placeholders = [];
 	pIndex = 0;
@@ -45,6 +48,7 @@ function updateHeading() {
 }
 
 function play() {
+	document.getElementById("subheading").style.display = "none";
 	document.getElementById("start_form").style.display = "none";
 	document.getElementById("words_form").style.display = "block";
 	document.getElementById("userinput").focus(); // put focus on textbox
@@ -92,7 +96,7 @@ function create() {
 
 function display() {
 	console.log("time to display");
-	document.getElementById("heading").innerHTML = "Congrats, you've completed your MadLibs! Read it below: \n";
+	document.getElementById("heading").innerHTML = "[Madlibs name] \n";
 	document.getElementById("words_form").style.display = "none";
 	for (var i = 0; i < inputList.length; i++) {
 		var inputWord = inputList[i];
@@ -100,9 +104,10 @@ function display() {
 		text = text.replace(re, inputWord);
 	}
 	console.log(text);
+	document.getElementById("divider").style.display = "none";
 	document.getElementById("madlibsdisplay").style.display = "inline";
 	document.getElementById("madlibsdisplay").innerHTML = text;
-	document.getElementById("playAgainbutton").style.display = "inline";
+	document.getElementById("playAgainbutton").style.display = "block";
 }
 
 function isVowel(ch) {

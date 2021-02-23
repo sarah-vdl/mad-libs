@@ -11,6 +11,7 @@
 	        <p id="heading">Welcome to Mad Libs!</p>
 	        <p id="subheading">Please select a story and click play.</p>
 	        <p id="madlibsdisplay"></p>
+	        <p id="divider">______________________</p>
 
 	        <form id="start_form" onsubmit="return false">
 		        <select id="selector">
@@ -21,18 +22,35 @@
 				    <option value="Tarzan">Tarzan</option>
 				    <option value="University">University</option>
 				</select>
-				<button type="button" id="playbutton" autofocus>Play</button>
+				<button type="button" id="playbutton" autofocus>PLAY</button>
 			</form>
 
 			<form id="words_form" onsubmit="return false">
 				<input type="text" id="userinput"></input>
-				<button id="nextbutton">Next</button>
+				<button id="nextbutton">NEXT</button>
 			</form>
 
-			<button type="button" id="playAgainbutton">Play Again</button>
+			<button type="button" id="playAgainbutton">PLAY AGAIN</button>
 
+
+			<!-- <form id="start_form" onsubmit="return false">
+				<div class="row">
+					<div class="column">
+						<select id="selector">
+				    		<option value="rand">Random Mad Lib</option>
+						    <option value="Benson">Benson</option>
+						    <option value="Clothes">Clothes</option>
+						    <option value="Dance">Dance</option>
+						    <option value="Tarzan">Tarzan</option>
+						    <option value="University">University</option>
+						</select>
+					</div>
+					<div class="column">
+						<button type="button" id="playbutton" autofocus>PLAY</button>
+					</div>
+				</div>
+			</form> -->
 		</div>
-		
 		<script src="scripts.js"></script>
 		<script src="stories.js"></script>
 
