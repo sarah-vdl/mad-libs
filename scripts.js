@@ -25,6 +25,7 @@ function playagain() {
 	document.getElementById("madlibsdisplay").style.display = "none";	
 	document.getElementById("subheading").style.display = "inline";
 	document.getElementById("divider").style.display = "inline";
+	document.getElementById("selector").value = "rand";
 	inputList = [];
 	placeholders = [];
 	pIndex = 0;
@@ -95,8 +96,10 @@ function create() {
 }
 
 function display() {
-	console.log("time to display");
-	document.getElementById("heading").innerHTML = "[Madlibs name] \n";
+	document.getElementById("heading").innerHTML = document.getElementById("selector").value;
+	if (document.getElementById("selector").value = "rand") {
+		document.getElementById("heading").innerHTML = "Random Madlibs:"
+	}
 	document.getElementById("words_form").style.display = "none";
 	for (var i = 0; i < inputList.length; i++) {
 		var inputWord = inputList[i];

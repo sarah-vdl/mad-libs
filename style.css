@@ -89,7 +89,7 @@ body {
 #playAgainbutton {
 	position: relative;
 	margin: auto;
-	margin-top: none;
+	margin-top: -170px;
 	margin-bottom: 200px;
 }
 
@@ -121,6 +121,6 @@ body {
 	right: 8%;*/
 	/*padding-left: 20%;
 	padding-right: 20%;*/
-	margin-bottom: none;
+	margin-top: 20px;
 	padding-bottom: 2px;
 }
