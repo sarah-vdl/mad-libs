@@ -97,8 +97,8 @@ function create() {
 
 function display() {
 	document.getElementById("heading").innerHTML = document.getElementById("selector").value;
-	if (document.getElementById("selector").value = "rand") {
-		document.getElementById("heading").innerHTML = "Random Madlibs:"
+	if (document.getElementById("selector").value == "rand") {
+		document.getElementById("heading").innerHTML = "Random Madlibs:";
 	}
 	document.getElementById("words_form").style.display = "none";
 	for (var i = 0; i < inputList.length; i++) {
