@@ -14,6 +14,7 @@ var inputList = [];
 var placeholders = [];
 var pIndex = 0;
 var text = "";
+var title = "";
 
 function playagain() {
 	document.getElementById("subheading").style.display = "block";
@@ -29,6 +30,8 @@ function playagain() {
 	inputList = [];
 	placeholders = [];
 	pIndex = 0;
+	text = "";
+	title = "";
 }
 
 // if pIndex as big as length of placeholder string it will do smthn else (display madlib)
@@ -56,22 +59,22 @@ function play() {
 	var selection = document.getElementById("selector").value;
 	if (selection == "rand")
 		selection = document.getElementById("selector").options[randomInt(1, 5)].value;
-	console.log(selection);
-	text = stories[selection];
-	console.log(text);
-	create(text);
+	// console.log(selection);
+	text = stories[selection].body;
+	title = stories[selection].title;
+	create();
 	updateHeading();
 }
 
 function next() {
 	var input = document.getElementById("userinput").value;
 	inputList.push(input);
-	console.log(inputList);
+	// console.log(inputList);
 	document.getElementById("userinput").value = "";
 	document.getElementById("userinput").focus(); // put focus back on textbox for next entry
 	pIndex++;
 	if (pIndex >= placeholders.length) {
-		display(text);
+		display();
 	} else {
 		updateHeading();
 	}
@@ -86,7 +89,7 @@ function create() {
             state = "reading";
         } else if (state == "reading" && c == ">") {
             placeholders.push(placeholder);
-            console.log(placeholder);
+            // console.log(placeholder);
             placeholder = "";
             state = "searching";
         } else if (state == "reading") {
@@ -96,17 +99,13 @@ function create() {
 }
 
 function display() {
-	document.getElementById("heading").innerHTML = document.getElementById("selector").value;
-	if (document.getElementById("selector").value == "rand") {
-		document.getElementById("heading").innerHTML = "Random Madlibs:";
-	}
+	document.getElementById("heading").innerHTML = title;
 	document.getElementById("words_form").style.display = "none";
 	for (var i = 0; i < inputList.length; i++) {
 		var inputWord = inputList[i];
 		var re = new RegExp('<.+?>');
 		text = text.replace(re, inputWord);
 	}
-	console.log(text);
 	document.getElementById("divider").style.display = "none";
 	document.getElementById("madlibsdisplay").style.display = "inline";
 	document.getElementById("madlibsdisplay").innerHTML = text;
